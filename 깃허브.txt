@@ -1,0 +1,9 @@
+git config --global user.name "sdqwe12"
+git config --global user.email dudghcjswo3@gmail.com
+
+모든 파일 올리겠다
+git add .
+메모 123으로 승인하겠다
+git commit -m "123"
+서버에 올려라
+git push origin main
