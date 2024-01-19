@@ -16,15 +16,20 @@ public class Ex_10813 {
 		}
 
 		for (int j = 0; j < M; j++) {
-			int I = scan.nextInt();
-			int J = scan.nextInt();
+			int I = scan.nextInt()-1;
+			int J = scan.nextInt()-1;
 
-			temp = arr[I - 1];
-			arr[I - 1] = arr[J - 1];
-			arr[J - 1] = temp;
-			
+			for(int k = I; k < J;k++) {
+				temp = arr[I];
+				arr[I] = arr[J];
+				arr[J] = temp;
+				J--;
+				I++;
+				
+			}
+			System.out.println(Arrays.toString(arr));
 		}
-		System.out.println(Arrays.toString(arr));
+		
 		//scan.close();
 	}
 }

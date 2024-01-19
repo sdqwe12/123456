@@ -2,7 +2,7 @@ package ex13;
 
 class InstClass {
 	static int num = 0;
-	InstClass(){
+	InstClass() {
 	num++;
 	System.out.println("생성자 호출 "+num);
 }

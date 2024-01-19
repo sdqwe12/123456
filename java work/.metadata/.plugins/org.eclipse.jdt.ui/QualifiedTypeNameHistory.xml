@@ -22,7 +22,6 @@
     <fullyQualifiedTypeName name="ex10.Solution"/>
     <fullyQualifiedTypeName name="ex10.Data"/>
     <fullyQualifiedTypeName name="ex10.Ex11"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="ex11.Person"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
@@ -30,8 +29,15 @@
     <fullyQualifiedTypeName name="aaa.AA"/>
     <fullyQualifiedTypeName name="aaa.Person"/>
     <fullyQualifiedTypeName name="baekjoon.Accumulator"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="baekjoon.Accumlator"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="ex12.Accumlator"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="ex13.InstClass"/>
+    <fullyQualifiedTypeName name="java.lang.Void"/>
+    <fullyQualifiedTypeName name="ex13.AAA"/>
+    <fullyQualifiedTypeName name="ex13.AA"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
