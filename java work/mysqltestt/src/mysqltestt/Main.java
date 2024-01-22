@@ -20,14 +20,16 @@ public class Main {
 			System.out.println("뭐할래?");
 			String todo = scan.nextLine();
 			db.insert(todo);
-		}		
-				else if (input.equals("2")) {
-					db.select();
-				}
-				else {
-					System.out.println("종료됩니다.");
-					break;
-				}
-	}
+			}		
+		
+		else if (input.equals("2")) {
+			db.select();
+			}
+		
+		else {
+			System.out.println("종료됩니다.");
+			break;
+			}
+		}
 	}
 }

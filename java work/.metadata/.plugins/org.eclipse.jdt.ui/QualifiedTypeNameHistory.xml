@@ -18,7 +18,6 @@
     <fullyQualifiedTypeName name="ex10.AA"/>
     <fullyQualifiedTypeName name="ex10.Card"/>
     <fullyQualifiedTypeName name="ex10.Tv"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="ex10.Solution"/>
     <fullyQualifiedTypeName name="ex10.Data"/>
     <fullyQualifiedTypeName name="ex10.Ex11"/>
@@ -40,4 +39,11 @@
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.PreparableStatement"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
