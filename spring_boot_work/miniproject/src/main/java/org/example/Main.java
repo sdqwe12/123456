@@ -2,25 +2,38 @@ package org.example;
 
 import org.example.mh.Member;
 import org.example.mh.MemberDB;
+import org.example.util.MyCLI;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+
         MemberDB md = new MemberDB();
 
-        System.out.println("이메일을 입력 하세요.");
-        String email = scan.nextLine();
-        System.out.println("주소을 입력 하세요.");
-        String addr = scan.nextLine();
-        System.out.println("이름을 입력 하세요.");
-        String name = scan.nextLine();
-        System.out.println("패스워드를 입력 하세요.");
-        String password = scan.nextLine();
-
-        Member member = new Member(email,name,addr,password);
-
-        md.insert(member);
+        while(true) {
+            int select = printMenu();
+            if (select == 1) {
+                md.insert();
+            }
+            else if(select ==2){
+                md.login();
+            }
+            else if(select ==6) {
+                System.out.println("종료됩니다.");
+                System.exit(0);
+            }
+        }
+    }
+    public static int printMenu() {
+        System.out.println("1.회원가입");
+        System.out.println("2.로그인");
+        System.out.println("3.물품보기");
+        System.out.println("4.장바구니");
+        System.out.println("5.주문목록");
+        System.out.println("6.종료");
+        Scanner scanner = new Scanner(System.in);
+        int menu = scanner.nextInt();
+        return menu;
     }
 }
