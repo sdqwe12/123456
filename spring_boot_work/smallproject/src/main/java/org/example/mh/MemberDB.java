@@ -3,13 +3,13 @@ package org.example.mh;
 import org.example.DBINFO;
 import org.example.util.MyCLI;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class MemberDB {
     private MyCLI cli = new MyCLI();
+
+    // too many connection...
+    // Mysql 실시간 모든 연결...
 
     public void insert() {
         Member member = cli.inputMember();
@@ -17,10 +17,11 @@ public class MemberDB {
         boolean result = findByEmail(member.getEmail());
 
         if(!result) {
+            Connection con = null;
+
             try {
                 // DB 연결하기
-                Connection con
-                        = DriverManager.getConnection(DBINFO.url, DBINFO.user, DBINFO.password);
+                con = DriverManager.getConnection(DBINFO.url, DBINFO.user, DBINFO.password);
 
                 // SQL 구문 작성하고...
                 PreparedStatement pstmt
@@ -42,6 +43,15 @@ public class MemberDB {
             } catch (Exception e) {
                 System.out.println("이쪽으로 온다.");
                 e.printStackTrace();
+            }
+            finally {
+                if(con!=null) {
+                    try {
+                        con.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
         else{
@@ -68,7 +78,7 @@ public class MemberDB {
         return false;
     }
 
-    public void login() {
+    public Member login() {
         Member member = cli.loginMember();
         try{
             Connection con
@@ -76,14 +86,18 @@ public class MemberDB {
             PreparedStatement pstmt = con.prepareStatement(
                     "SELECT * FROM member " +
                             "WHERE email=? AND PASSWORD=?");
+            System.out.println(member.getEmail());
+            System.out.println(member.getPassword());
             pstmt.setString(1, member.getEmail());
             pstmt.setString(2, member.getPassword());
             ResultSet rs = pstmt.executeQuery();
-
-
-
+            if(rs.next()){
+                member.setRole(rs.getString("role"));
+                return member;
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
+        return null;
     }
 }
