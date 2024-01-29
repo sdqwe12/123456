@@ -1,4 +1,4 @@
-package org.example.sh;
+package org.example.item;
 
 public class GuestBookDB {
 }
