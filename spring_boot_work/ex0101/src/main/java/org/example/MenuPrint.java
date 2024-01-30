@@ -18,6 +18,8 @@ Scanner scan = new Scanner(System.in);
     public int mainMenu() {
         System.out.println("[ 메뉴를 선택해주세요 ]");
         System.out.println(" 1.로그인 | 2.회원가입 | 0.종료");
-        //return mainMenu();
+        int mainCategory = scan.nextInt();
+        return mainCategory;
+
     }
 }

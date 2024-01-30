@@ -1,10 +1,10 @@
 package org.example.Member;
 import lombok.*;
 
-@Data
-//@Setter
-//@Getter // getter 메서드
-//@AllArgsConstructor // 생성자
+//@Data
+@Setter
+@Getter
+@AllArgsConstructor
 @Builder
 @ToString
 public class Member {
