@@ -126,11 +126,8 @@ public class DB {
 			while (rs.next()) {
 				if(rs.getString("id").equals(user_id)) {
 					System.out.println("중복된 아이디입니다.");
+					cu.dupl=true;
 				}
-				else {
-					cu.dupl = false;
-				}
-				
 			}
 
 		} catch (Exception e) {

@@ -13,6 +13,7 @@ public class User {
 	public void createUser() {
 		System.out.println("아이디를 입력해주세요.");
 		while(dupl) {
+			dupl = false;
 			id = sc.next();
 			db.idCheck(id);
 		}
