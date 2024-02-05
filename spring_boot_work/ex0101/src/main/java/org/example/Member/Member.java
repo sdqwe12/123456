@@ -1,4 +1,4 @@
-package org.example.Member;
+package org.example.member;
 import lombok.*;
 
 //@Data
@@ -7,10 +7,10 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
+
 public class Member {
     private String email;
     private String password;
     private String name;
-    private String login_satate;
     private String sign_date;
   }

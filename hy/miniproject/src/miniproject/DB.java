@@ -116,7 +116,7 @@ public class DB {
 		}
 	}
 
-	public void idCheck(String user_id) {
+	public boolean idCheck(String user_id) {
 		User cu = new User();
 		try {
 			Connection con = DriverManager.getConnection(Info.url, Info.user, Info.pass);
@@ -126,13 +126,14 @@ public class DB {
 			while (rs.next()) {
 				if(rs.getString("id").equals(user_id)) {
 					System.out.println("중복된 아이디입니다.");
-					cu.dupl=true;
+					return true;
 				}
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return false;
 	}
 	
 	public String userCheck(String user_id,String password) {

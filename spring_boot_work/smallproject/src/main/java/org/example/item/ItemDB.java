@@ -3,9 +3,9 @@ package org.example.item;
 import org.example.DBINFO;
 import org.example.util.Login;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemDB {
 
@@ -47,5 +47,46 @@ public class ItemDB {
             pstmt.close();
         }
     }
+    public void select() {
+        List<Item> list = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            con = DriverManager.getConnection(DBINFO.url, DBINFO.user, DBINFO.password);
+            pstmt = con.prepareStatement("select * from item");
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                list.add(
+                        new Item(rs.getLong("item_id"),
+                                rs.getString("reg_time"),
+                                rs.getString("update_time"),
+                                rs.getString("created_by"),
+                                rs.getString("modified_by"),
+                                rs.getString("item_nm"),
+                                rs.getString("item_detail"),
+                                rs.getString("item_sell_status"),
+                                rs.getInt("price"),
+                                rs.getInt("stock_number"))
+                );
+            }
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(list.get(i).getItem_id()+"\t");
+                System.out.println(list.get(i).getItem_nm()+"\t");
+                System.out.println(list.get(i).getItem_sell_status()+"\t");
+                System.out.println(list.get(i).getItem_detail()+"\t");
+            }
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+                pstmt.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
